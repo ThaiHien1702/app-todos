@@ -1,8 +1,13 @@
-const express = require('express')
-const app = express()
+require('dotenv').config()
+const express = require('express');
+const app = express();
+const route = require('./routes');
+const db = require('./configdb');
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
 
-app.listen(3000)
+db.connect();
+
+app.use(express.json())
+route(app);
+
+app.listen(3000);

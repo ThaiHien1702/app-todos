@@ -1,13 +1,13 @@
 const rigisterRouter = require('./registerUser');
 const loginRouter = require('./loginUser')
-const postRoiter = require('./postTask')
+const postRouter = require('./postTask')
 
 
 function routes(app) {
 
     app.use('/api/auth', rigisterRouter)
     app.use('/api/auth', loginRouter)
-    app.use('/api/task', postRoiter)
+    app.use('/api/task', postRouter)
 
 }
 
